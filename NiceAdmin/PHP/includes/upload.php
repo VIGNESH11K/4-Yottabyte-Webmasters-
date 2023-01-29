@@ -64,7 +64,7 @@ class  Media {
       $this->errors[] = "The file location was not available.";
       return false;
     elseif(!is_writable($this->productPath)):
-      $this->errors[] = $this->productPath." Must be writable!!!.";
+      $this->errors[] = $this->productPath." Must be writable!!";
       return false;
     elseif(file_exists($this->productPath."/".$this->fileName)):
       $this->errors[] = "The file {$this->fileName} already exists.";
@@ -86,7 +86,7 @@ class  Media {
       }
 
     if(!is_writable($this->productPath)){
-        $this->errors[] = $this->productPath." Must be writable!!!.";
+        $this->errors[] = $this->productPath." Must be writable!";
         return false;
       }
 
@@ -123,7 +123,7 @@ class  Media {
         return false;
       }
     if(!is_writable($this->userPath)){
-        $this->errors[] = $this->userPath." Must be writable!!!.";
+        $this->errors[] = $this->userPath." Must be writable!";
         return false;
       }
     if(!$id){

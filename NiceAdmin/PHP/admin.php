@@ -4,6 +4,7 @@
   // Checkin What level user has permission to view this page
    page_require_level(1);
 ?>
+
 <?php
  $c_categorie     = count_by_id('categories');
  $c_product       = count_by_id('products');
@@ -53,7 +54,7 @@
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
          <div class="panel-icon pull-left bg-blue2">
-          <i class="glyphicon glyphicon-shopping-cart"></i>
+          <i class="glyphicon glyphicon-tags"></i>
         </div>
         <div class="panel-value pull-right">
           <h2 class="margin-top"> <?php  echo $c_product['total']; ?> </h2>
@@ -67,7 +68,7 @@
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
          <div class="panel-icon pull-left bg-green">
-          <i class="glyphicon glyphicon-usd"></i>
+          <i class="glyphicon glyphicon-adjust"></i>
         </div>
         <div class="panel-value pull-right">
           <h2 class="margin-top"> <?php  echo $c_sale['total']; ?></h2>
@@ -80,7 +81,7 @@
   
   <div class="row">
    <div class="col-md-4">
-     <div class="panel panel-default">
+     <div class="panel panel-default ht">
        <div class="panel-heading">
          <strong>
            <span class="glyphicon glyphicon-th"></span>
@@ -110,7 +111,7 @@
      </div>
    </div>
    <div class="col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default ht">
         <div class="panel-heading">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
@@ -121,7 +122,7 @@
           <table class="table table-striped table-bordered table-condensed">
        <thead>
          <tr>
-           <th class="text-center" style="width: 50px;">#</th>
+           <th class="text-center" style="width: 50px;">Sr</th>
            <th>Product Name</th>
            <th>Date</th>
            <th>Total Sale</th>
@@ -137,7 +138,7 @@
            </a>
            </td>
            <td><?php echo remove_junk(ucfirst($recent_sale['date'])); ?></td>
-           <td>$<?php echo remove_junk(first_character($recent_sale['price'])); ?></td>
+           <td>₹<?php echo remove_junk(first_character($recent_sale['price'])); ?></td>
         </tr>
 
        <?php endforeach; ?>
@@ -147,7 +148,7 @@
    </div>
   </div>
   <div class="col-md-4">
-    <div class="panel panel-default">
+    <div class="panel panel-default ht">
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
@@ -167,7 +168,7 @@
                 <?php endif;?>
                 <?php echo remove_junk(first_character($recent_product['name']));?>
                   <span class="label label-warning pull-right">
-                 $<?php echo (int)$recent_product['sale_price']; ?>
+                  ₹<?php echo (int)$recent_product['sale_price']; ?>
                   </span>
                 </h4>
                 <span class="list-group-item-text pull-right">
