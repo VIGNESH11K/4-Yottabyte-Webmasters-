@@ -69,7 +69,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: rgba(255, 255, 255, 0);
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
@@ -150,7 +150,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #16df7e;
+  color: #db290a
 }
 
 .navbar .getstarted,
@@ -167,9 +167,9 @@ h6 {
 
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
-  background: #206bfb;
+  background: #db290a;
   color: #fff;
-  border-color: #206bfb;
+  border-color: #000000;
 }
 
 .navbar .dropdown ul {
@@ -306,7 +306,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #16df7e;
+  color: #db290a;
 }
 
 .navbar-mobile .getstarted,
@@ -631,7 +631,7 @@ section {
 .counts .counters span {
   font-size: 48px;
   display: block;
-  color: #16df7e;
+  color:#db290a;
   font-weight: 700;
 }
 
@@ -664,7 +664,7 @@ section {
 }
 
 .services .icon-box .icon i {
-  color: #16df7e;
+  color:#db290a;
   font-size: 36px;
   transition: 0.3s;
 }
@@ -691,7 +691,7 @@ section {
 }
 
 .services .icon-box:hover h4 a {
-  color: #16df7e;
+  color: #db290a;
 }
 
 /*--------------------------------------------------------------
@@ -719,7 +719,7 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #16df7e;
+  color: #db290a;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -767,7 +767,7 @@ section {
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #16df7e;
+  color:#db290a;
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -847,7 +847,7 @@ section {
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
+/* .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
 }
@@ -919,18 +919,18 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #16df7e;
+  border: 1px solid #df3216;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #16df7e;
-}
+  background-color:#df3216;
+} */
 
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: #16df7e;
+  background: #df3216;
   background-size: cover;
   padding: 60px 0;
 }
@@ -973,11 +973,13 @@ section {
   margin-bottom: 20px;
   padding: 30px 20px;
   background: #fff;
+  
 }
 
 .team .member img {
   max-width: 100%;
   margin: 0 0 30px 0;
+  border-radius: 25%;
 }
 
 .team .member h4 {
@@ -1116,7 +1118,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: #ed3c0d;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1136,7 +1138,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid #ed3c0d;
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -1152,7 +1154,7 @@ section {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #16df7e;
+  border-color:#ed3c0d;
 }
 
 .contact .php-email-form input {
@@ -1164,7 +1166,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #16df7e;
+  background:#ed3c0d;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1173,7 +1175,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #206bfb;
+  background: #ed3c0d;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1312,7 +1314,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #16df7e;
+  background: #df4f16;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -1374,3 +1376,155 @@ section {
     text-align-last: center;
   }
 }
+
+
+
+
+
+/* terminal */
+.center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.terminalCont {
+  background: black;
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px 0 0 0;
+  margin-top: -20px;
+  font-family: 'Roboto Mono', monospace;
+  opacity: 0;
+  height: auto;
+
+  animation:
+    slideDownAnimation 0.001ms ease-in-out 0.0001ms forwards,
+    fadeInAnimation 0.001ms ease-in-out 0.0001ms forwards;
+}
+
+.userEnteredText {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#terminalReslutsCont {
+  width: 100%;
+  height: 400px;
+  padding: 12px;
+  overflow-y: auto;
+  resize: none;
+  border: none;
+  font-size: 14px;
+  line-height: 28px;
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+#terminalReslutsCont a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+#terminalReslutsCont a:hover {
+  text-decoration: underline;
+}
+
+#terminalTextInput {
+  background: black;
+  display: block;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  color: white;
+  padding: 18px;
+  font-size: 14px;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+@-moz-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+@-o-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+/* terminal end */

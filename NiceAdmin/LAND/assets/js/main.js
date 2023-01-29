@@ -252,3 +252,214 @@
   new PureCounter();
 
 })()
+
+
+
+
+// terminal
+document.addEventListener('DOMContentLoaded', function () {
+
+  document.getElementsByTagName('form')[0].onsubmit = function (evt) {
+      evt.preventDefault();
+      checkWord();
+      // window.scrollTo(0, 150);
+  }
+
+  document.getElementById('terminalTextInput').focus();
+
+  var textInputValue = document.getElementById('terminalTextInput').value.trim();
+
+  var textResultsValue = document.getElementById('terminalReslutsCont').innerHTML;
+
+  var clearInput = function () {
+      document.getElementById('terminalTextInput').value = "";
+  }
+
+  var scrollToBottomOfResults = function () {
+      var terminalResultsDiv = document.getElementById('terminalReslutsCont');
+      terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+  }
+
+  scrollToBottomOfResults();
+
+  var addTextToResults = function (textToAdd) {
+      document.getElementById('terminalReslutsCont').innerHTML += "<p>" + textToAdd + "</p>";
+      scrollToBottomOfResults();
+  }
+
+  var postHelpList = function () {
+      var helpKeyWords = [
+          "- Welcome to Inventrio , ",
+          "1)What are the features?",
+          "2)Built in how many hours?",
+          "3)Whats your Team Name?",
+          "4)Web/App Name?",
+          "- 'Time' will display the current time.",
+          "- 'Date' will display the current date.",
+          "* There are many easter eggs on this terminal, find and tag us on instagram for exciting perks ;)"
+      ].join('<br>');
+      addTextToResults(helpKeyWords);
+  }
+
+  var getTimeAndDate = function (postTimeDay) {
+      var timeAndDate = new Date();
+      var timeHours = timeAndDate.getHours();
+      var timeMinutes = timeAndDate.getMinutes();
+      var dateDay = timeAndDate.getDate();
+      console.log(dateDay);
+      var dateMonth = timeAndDate.getMonth() + 1;
+      var dateYear = timeAndDate.getFullYear();
+
+      if (timeHours < 10) {
+          timeHours = "0" + timeHours;
+      }
+
+      if (timeMinutes < 10) {
+          timeMinutes = "0" + timeMinutes;
+      }
+
+      var currentTime = timeHours + ":" + timeMinutes;
+      var currentDate = dateDay + "/" + dateMonth + "/" + dateYear;
+
+      if (postTimeDay == "time") {
+          addTextToResults(currentTime);
+      }
+      if (postTimeDay == "date") {
+          addTextToResults(currentDate);
+      }
+  }
+
+  var openLinkInNewWindow = function (linkToOpen) {
+      window.open(linkToOpen, '_blank');
+      clearInput();
+  }
+
+  var textReplies = function () {
+      switch (textInputValueLowerCase) {
+          case "about":
+              clearInput();
+              addTextToResults("Crescendo 2023!");
+              break;
+
+
+
+
+              case "1":
+              clearInput();
+              addTextToResults("Easy Generate Reports, User friendly UI, Manage products and Mario's favourite ");
+              break;
+
+
+
+
+              case "2":
+                clearInput();
+                addTextToResults("16 HRS AND COUNTING ");
+                break;
+
+
+                case "3":
+              clearInput();
+              addTextToResults(" 4-Yottabyte ");
+              break;
+
+              case "4":
+                clearInput();
+                addTextToResults(" InventRio");
+                break;
+
+
+
+                case "GDSC":
+                  clearInput();
+                  addTextToResults(" First Hackathon ");
+                  break;
+
+
+                  case "Judges":
+                    clearInput();
+                    addTextToResults(" Awesome ");
+                    break;
+
+          case "chris":
+          case "chris gracias":
+              clearInput();
+              addTextToResults("My Creator");
+              break;
+
+          case "vignesh":
+              clearInput();
+              addTextToResults("My Creator");
+              break;
+
+          case "i love you":
+          case "love you":
+          case "love":
+              clearInput();
+              addTextToResults("Aww! That's so sweet 😍. Here's some love for you too ❤ ❤ ❤ !");
+              break;
+
+          case "rick":
+          case "rick roll":
+          case "rickroll":
+          case "do me a rickroll":
+          case "fuck you":
+              clearInput();
+              addTextToResults(':)');
+              openLinkInNewWindow('https://youtu.be/dQw4w9WgXcQ');
+              break;
+
+          case "hello":
+          case "hi":
+              clearInput();
+              addTextToResults("Hello, it's me... I was wondering if after all these years you'd like to meet... 😍");
+              break;
+
+          case "time":
+              clearInput();
+              getTimeAndDate("time");
+              break;
+
+          case "date":
+              clearInput();
+              getTimeAndDate("date");
+              break;
+
+          case "help":
+          case "?":
+              clearInput();
+              postHelpList();
+              break;
+
+          case "stuco rocks":
+          case "stuco":
+              clearInput();
+              addTextToResults("STUCO ROCKS !!");
+              break;
+
+          default:
+              clearInput();
+              addTextToResults("<p><i>The command " + "<b>" + textInputValue + "</b>" + " was not found. Type <b>Help</b> to see all commands.</i></p>");
+              break;
+      }
+  }
+
+  var checkWord = function () {
+      textInputValue = document.getElementById('terminalTextInput').value.trim();
+      textInputValueLowerCase = textInputValue.toLowerCase();
+
+      if (textInputValue != "") {
+          addTextToResults("<p class='userEnteredText'>> " + textInputValue + "</p>");
+          if (textInputValueLowerCase.substr(0, 9) == "register ") {
+              openLinkInNewWindow('/register-' + textInputValueLowerCase.substr(9));
+              addTextToResults("<i>The Registration link for " + "<b>" + textInputValue.substr(9) + "</b>" + " should be opened now.</i>");
+          } else {
+              textReplies();
+          }
+      }
+  };
+
+});
+
+
+// terminal 
